@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ventas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Calcular Ventas</h1>
+    <form>
+        Nombre del producto: <input type="text" id="nombreProducto"><br>
+        Precio: <input type="number" id="precio"><br>
+        Cantidad: <input type="number" id="cantidad"><br>
+        <button onclick="calcularVenta()">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularVenta() {
+            
+            var nombreProducto = document.getElementById("nombreProducto").value;
+            var precio = parseInt(document.getElementById("precio").value);
+            var cantidad = parseInt(document.getElementById("cantidad").value);
+
+            var total = precio * cantidad;
+
+            setTimeout(function() {
+                document.getElementById("resultado").textContent = "El total de la venta de " + nombreProducto + " es: $" + total;
+            }, 100); 
+        }
+    </script>
+</body>
+</html>
